@@ -14,10 +14,10 @@ new Vue({
   },
   methods: {
     atacar() {
-      //El jugador ataca con 1 a 5
-      let ataqueJugador = this.generarRandom(5);
-      //El mounstro ataca con 1 a 15
-      let ataqueMounstro = this.generarRandom(15);
+      //El jugador ataca con 1 a 6
+      let ataqueJugador = this.generarRandom(6);
+      //El mounstro ataca con 1 a 10
+      let ataqueMounstro = this.generarRandom(10);
 
       this.vidaJugador -= ataqueMounstro;
       this.vidaMounstro -= ataqueJugador;
@@ -31,8 +31,14 @@ new Vue({
       //El jugador ataca con 1 a 8
       let ataqueJugador = this.generarRandom(8);
 
-      //El mounstro ataca con 1 a 10
-      let ataqueMounstro = this.generarRandom(10);
+      //El mounstro ataca con 1 a 8
+      let ataqueMounstro = this.generarRandom(8);
+
+      this.vidaJugador -= ataqueMounstro;
+      this.vidaMounstro -= ataqueJugador;
+
+      console.log("vida jugador: " + this.vidaJugador);
+      console.log("Vida mounstro " + this.vidaMounstro);
       return true;
     },
     generarRandom(valorAtaque) {

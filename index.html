@@ -14,7 +14,9 @@
             <div class="small-6 columns">
                 <h1 class="text-center">Jugador</h1>
                 <div class="curarthbar">
-                    <div class="curarthbar text-center" style="background-color: goldenrod; margin: 0; color: white;">
+                    <div class="curarthbar text-center" style="background-color: goldenrod; margin: 0; color: white;"
+                        :style="`width: ${vidaJugador}%`">
+                        <div>{{vidaJugador}}%</div>
                     </div>
                 </div>
             </div>
@@ -22,7 +24,9 @@
                 <h1 class="text-center">MONSTRUO</h1>
                 <div class="curarthbar">
                     <div class="curarthbar text-center"
-                        style="background-color: rgb(0, 81, 128); margin: 0; color: white;">
+                        style="background-color: rgb(0, 81, 128); margin: 0; color: white;"
+                        :style="`width: ${vidaJugador}%`">
+                        <div v-text="`${vidaMounstro}     %`"></div>
                     </div>
                 </div>
             </div>
