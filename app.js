@@ -9,31 +9,30 @@ new Vue({
     mostrarLog() {
       for (let i = 0; i < eventos.length; i++) {
         const entrada = eventos[i];
-        alert(entrada);
       }
     }
   },
   methods: {
     atacar() {
       //El jugador ataca con 1 a 5
-      let ataqueJugador = generarRandom(5);
-      //El mounstro ataca con 1 a 10
-      let ataqueMounstro = generarRandom(10);
+      let ataqueJugador = this.generarRandom(5);
+      //El mounstro ataca con 1 a 15
+      let ataqueMounstro = this.generarRandom(15);
 
-      vidaJugador -= ataqueMounstro;
-      vidaMounstro -= ataqueJugador;
+      this.vidaJugador -= ataqueMounstro;
+      this.vidaMounstro -= ataqueJugador;
 
-      alert(vidaJugador + vidaMounstro);
-      console.log(vidaJugador + " " + vidaMounstro);
+      console.log("vida jugador: " + this.vidaJugador);
+      console.log("Vida mounstro " + this.vidaMounstro);
 
       return true;
     },
     atacarEspecial() {
       //El jugador ataca con 1 a 8
-      let ataqueJugador = generarRandom(8);
+      let ataqueJugador = this.generarRandom(8);
 
       //El mounstro ataca con 1 a 10
-      let ataqueMounstro = generarRandom(10);
+      let ataqueMounstro = this.generarRandom(10);
       return true;
     },
     generarRandom(valorAtaque) {
