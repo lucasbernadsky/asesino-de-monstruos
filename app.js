@@ -44,6 +44,16 @@ new Vue({
     generarRandom(valorAtaque) {
       let valor = Math.floor(Math.random() * valorAtaque) + 1;
       return valor;
+    },
+    empezarNuevo() {
+      this.vidaJugador = 100;
+      this.vidaMounstro = 100;
+    },
+    curar() {
+      //Aumenta la vida entre 1 y 15
+      this.vidaJugador + this.generarRandom(15) >= 100
+        ? (this.vidaJugador = 100)
+        : (this.vidaJugador += this.generarRandom(15));
     }
   }
 });

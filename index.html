@@ -25,7 +25,7 @@
                 <div class="curarthbar">
                     <div class="curarthbar text-center"
                         style="background-color: rgb(0, 81, 128); margin: 0; color: white;"
-                        :style="`width: ${vidaJugador}%`">
+                        :style="`width: ${vidaMounstro}%`">
                         <div v-text="`${vidaMounstro}     %`"></div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
         </section>
         <section class="row controls">
             <div class="small-12 columns">
-                <button id="start-game">
+                <button v-on:click="empezarNuevo" id="start-game">
                     EMPEZAR JUEGO NUEVO</button>
             </div>
         </section>
@@ -41,7 +41,8 @@
             <div class="small-12 columns">
                 <button v-on:click="atacar" id="atacar">ATACAR</button>
                 <button v-on:click="atacarEspecial" id="ataque-especial">ATAQUE ESPECIAL</button>
-                <button id="curar">CURAR</button>
+                <button id="curar" v-if="vidaJugador>=100" disabled> CURAR</button>
+                <button id="curar" v-on:click="curar" v-else>CURAR</button>
                 <button id="rendirse">RENDIRSE</button>
             </div>
         </section>
